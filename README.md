@@ -18,29 +18,13 @@ source tflite-env/bin/activate
 
 ---
 
-## 🎥 Step 2: Enable a Virtual Camera Device
 
-```bash
-sudo modprobe v4l2loopback video_nr=10 card_label="VirtualCam" exclusive_caps=1
-```
 
----
-
-## 🔄 Step 3: Stream from Pi Camera to Virtual Device
-
-```bash
-libcamera-vid -t 0 --inline --codec mjpeg -o - | ffmpeg -i - -f v4l2 -vcodec mjpeg /dev/video10
-```
-
-This will stream the Pi camera output to `/dev/video10`.
-
----
-
-## ▶️ Step 4: Run Your Python Script
+## ▶️ Step 2: Run Your Python Script
 
 ```bash
 cd ~/Desktop
-python /home/adr2025/Desktop/target.py
+python targetfinal.py
 ```
 
 ---
