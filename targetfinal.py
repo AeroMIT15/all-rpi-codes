@@ -14,6 +14,14 @@ def start_virtual_cam():
     # Use `preexec_fn=os.setsid` so we can kill the whole process group later
     return subprocess.Popen(cmd, shell=True, preexec_fn=lambda: signal.signal(signal.SIGINT, signal.SIG_IGN))
 
+def save_detected_image(frame, count):
+    # Save the frame to the images folder on the Desktop
+    image_folder = '/home/adr123/Desktop/images'
+    os.makedirs(image_folder, exist_ok=True)  # Create the folder if it doesn't exist
+    image_path = os.path.join(image_folder, f"detected_{count}.jpg")
+    cv2.imwrite(image_path, frame)
+    print(f"Image saved: {image_path}")
+
 def main():
     # Start virtual cam pipeline
     virtual_cam_process = start_virtual_cam()
@@ -41,6 +49,7 @@ def main():
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
     print("Press 'q' to quit.")
+    detection_count = 0  # To keep track of how many images are saved
     while True:
         ret, frame = cap.read()
         if not ret:
@@ -52,6 +61,11 @@ def main():
 
         # Perform detection
         results = model(frame, conf=conf_threshold)
+
+        # Check if any targets are detected (i.e., results have detections)
+        if len(results[0].boxes) > 0:  # If detections exist
+            detection_count += 1
+            save_detected_image(frame, detection_count)
 
         # Calculate FPS
         fps = 1.0 / (time.time() - start_time)
