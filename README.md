@@ -1,5 +1,5 @@
 
-# all-rpi-codes
+# RPI COMMANDS
 
 This guide sets up a virtual environment, streams the Raspberry Pi camera to a virtual video device, and runs a Python script that uses the virtual camera.
 
@@ -45,5 +45,5 @@ python /home/adr2025/Desktop/target.py
 
 - Ensure `libcamera`, `v4l2loopback`, and `ffmpeg` are installed on your system.
 - Keep the streaming command running while executing the Python script that uses the virtual camera.
-```
+
 
