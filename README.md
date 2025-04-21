@@ -2,6 +2,10 @@
 # RPI COMMANDS
 
 This guide sets up a virtual environment, streams the Raspberry Pi camera to a virtual video device, and runs a Python script that uses the virtual camera.
+---
+
+## 📦NOTE: FOR THE NEW CODE
+just make virtual environment and run targetfinal.py from desktop
 
 ---
 
