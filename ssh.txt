@@ -1,0 +1,47 @@
+Permission denied, please try again.
+prathiksha@10.77.181.120's password: 
+prathiksha@prathiksha-Aspire-A715-79G:~$ ssh  adr123@10.77.181.120
+adr123@10.77.181.120's password: 
+
+prathiksha@prathiksha-Aspire-A715-79G:~$ hostname -I
+10.77.181.205 172.17.0.1 2409:40f2:3017:a44c:114b:4240:2e1a:758 2409:40f2:3017:a44c:e087:b99a:930d:9bec 
+prathiksha@prathiksha-Aspire-A715-79G:~$ ssh  adr123@10.77.181.120
+adr123@10.77.181.120's password: 
+Permission denied, please try again.
+adr123@10.77.181.120's password: 
+Linux raspberrypi 6.6.51+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.6.51-1+rpt3 (2024-10-08) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun Apr 20 12:15:05 2025
+adr123@raspberrypi:~ $ ls
+Bookshelf  Documents  Music     Public     tflite-env  wget-log
+Desktop    Downloads  Pictures  Templates  Videos
+adr123@raspberrypi:~ $ cd Desktop/
+adr123@raspberrypi:~/Desktop $ ls
+ aerothon4      camera_test.py   opencv2d.py   red_detects
+'best (1).pt'   frame.jpg        opencv3d.py   target.py
+ best.pt        notes.txt        opencv.py     yolotargetdetection
+adr123@raspberrypi:~/Desktop $ python opencv2d.py
+Traceback (most recent call last):
+  File "/home/adr123/Desktop/opencv2d.py", line 1, in <module>
+    import cv2
+ModuleNotFoundError: No module named 'cv2'
+adr123@raspberrypi:~/Desktop $ cd
+adr123@raspberrypi:~ $ ls
+Bookshelf  Documents  Music     Public     tflite-env  wget-log
+Desktop    Downloads  Pictures  Templates  Videos
+adr123@raspberrypi:~ $ source tflite-env/
+-bash: source: tflite-env/: is a directory
+adr123@raspberrypi:~ $ source tflite-env/bin/activate
+(tflite-env) adr123@raspberrypi:~ $ cd Desktop/
+(tflite-env) adr123@raspberrypi:~/Desktop $ python opencv2d.py
+^C
+^C^C
+
+
+
