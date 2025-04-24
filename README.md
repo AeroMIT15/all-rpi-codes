@@ -15,7 +15,7 @@ just make virtual environment and run targetfinal.py from desktop
 python3 -m venv tflite-env
 source tflite-env/bin/activate
 
-#use licamera virtual device:
+#use licamera virtual device and make it available for use:
 
 sudo modprobe v4l2loopback video_nr=10 card_label="VirtualCam" exclusive_caps=1
 ```
