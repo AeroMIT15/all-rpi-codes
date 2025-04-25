@@ -38,4 +38,20 @@ python targetfinal.py
 - Ensure `libcamera`, `v4l2loopback`, and `ffmpeg` are installed on your system.
 - Keep the streaming command running while executing the Python script that uses the virtual camera.
 
+---
 
+## How to setup RPI with VNC
+
+```bash
+sudo raspi-config
+```
+then manually enable ssh and vnc to yes
+
+prathiksha@prathiksha-Aspire-A715-79G:~$ hostname -I
+10.77.181.205 172.17.0.1 2409:40f2:3017:a44c:114b:4240:2e1a:758 2409:40f2:3017:a44c:e087:b99a:930d:9bec 
+
+
+then on laptop:
+
+prathiksha@prathiksha-Aspire-A715-79G:~$ ssh  adr123@10.77.181.120
+adr123@10.77.181.120's password: 
